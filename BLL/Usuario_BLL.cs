@@ -9,6 +9,7 @@ namespace BLL
     public class Usuario_BLL
     {
         DAL.Usuario_DAL mapper = new DAL.Usuario_DAL();
+        
 
         public string Agregar(BE.Usuario US)
         {

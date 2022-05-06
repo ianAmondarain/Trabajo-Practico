@@ -123,7 +123,7 @@
             this.Controls.Add(this.btnUsuarios);
             this.Name = "Bienvenido_QA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bienvenido_QA";
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.Bienvenido_QA_Load);
             this.ResumeLayout(false);
 

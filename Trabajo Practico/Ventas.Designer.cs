@@ -35,7 +35,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtVentas = new System.Windows.Forms.TextBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtPrecioU = new System.Windows.Forms.TextBox();
+            this.txtPrecioCompra = new System.Windows.Forms.TextBox();
             this.txtPrecioVenta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -116,12 +116,12 @@
             this.txtCantidad.Size = new System.Drawing.Size(100, 20);
             this.txtCantidad.TabIndex = 11;
             // 
-            // txtPrecioU
+            // txtPrecioCompra
             // 
-            this.txtPrecioU.Location = new System.Drawing.Point(111, 142);
-            this.txtPrecioU.Name = "txtPrecioU";
-            this.txtPrecioU.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecioU.TabIndex = 12;
+            this.txtPrecioCompra.Location = new System.Drawing.Point(111, 142);
+            this.txtPrecioCompra.Name = "txtPrecioCompra";
+            this.txtPrecioCompra.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioCompra.TabIndex = 12;
             // 
             // txtPrecioVenta
             // 
@@ -148,7 +148,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 13);
             this.label2.TabIndex = 15;
-            this.label2.Text = "PrecioUnitario $:";
+            this.label2.Text = "PrecioCompra $:";
             // 
             // label3
             // 
@@ -277,7 +277,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPrecioVenta);
-            this.Controls.Add(this.txtPrecioU);
+            this.Controls.Add(this.txtPrecioCompra);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.txtVentas);
             this.Controls.Add(this.dataGridView1);
@@ -304,7 +304,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtVentas;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtPrecioU;
+        private System.Windows.Forms.TextBox txtPrecioCompra;
         private System.Windows.Forms.TextBox txtPrecioVenta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

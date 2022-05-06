@@ -59,7 +59,7 @@ namespace Trabajo_Practico
         {
             txtVentas.Clear();
             txtCantidad.Clear();
-            txtPrecioU.Clear();
+            txtPrecioCompra.Clear();
             txtPrecioVenta.Clear();
         }
         void Agregar_Venta()
@@ -69,14 +69,14 @@ namespace Trabajo_Practico
             temp._IDClientes = int.Parse(cmbIDClientes.Text);
             temp._Descripcion = cmbProducto.Text;
             temp._Cantidad = int.Parse(txtCantidad.Text);
-            temp._PrecioUnitario = float.Parse(txtPrecioU.Text);
+            temp._PrecioUnitario = float.Parse(txtPrecioCompra.Text);
             temp._PrecioVenta = float.Parse(txtPrecioVenta.Text);
             try
             {
                 gestor.Agregar(temp);
                 MessageBox.Show("Agregado Correctamente...");
                 listar();
-                txtVentas.Text = cmbIDClientes.Text = cmbProducto.Text = txtCantidad.Text = txtPrecioU.Text = txtPrecioVenta.Text = "";
+                txtVentas.Text = cmbIDClientes.Text = cmbProducto.Text = txtCantidad.Text = txtPrecioCompra.Text = txtPrecioVenta.Text = "";
             }
             catch (Exception Ex)
             {
@@ -106,8 +106,8 @@ namespace Trabajo_Practico
             temp._IDClientes = int.Parse(cmbIDClientes.Text);
             temp._Descripcion = cmbProducto.Text;
             temp._Cantidad = int.Parse(txtCantidad.Text);
-            temp._PrecioUnitario = float.Parse(txtPrecioU.Text);
-            temp._PrecioVenta = float.Parse(txtVentas.Text);
+            temp._PrecioUnitario = int.Parse(txtPrecioCompra.Text);
+            temp._PrecioVenta = int.Parse(txtVentas.Text);
             try
             {
                 gestor.Modificar(temp);
@@ -118,7 +118,7 @@ namespace Trabajo_Practico
             {
                 MessageBox.Show(ex.ToString());
             }
-            limpiartxt();
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -147,7 +147,7 @@ namespace Trabajo_Practico
                 cmbIDClientes.Text = temp._IDClientes.ToString();
                 cmbProducto.Text = temp._Descripcion;
                 txtCantidad.Text = temp._Cantidad.ToString();
-                txtPrecioU.Text = temp._PrecioUnitario.ToString();
+                txtPrecioCompra.Text = temp._PrecioUnitario.ToString();
                 txtPrecioVenta.Text = temp._PrecioVenta.ToString();
             }
             catch
@@ -164,7 +164,7 @@ namespace Trabajo_Practico
         private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<BE.Producto> Producto = GestorProducto.Listar();
-            txtPrecioU.Text = Producto[cmbProducto.SelectedIndex]._Precio_Compra.ToString();
+            txtPrecioCompra.Text = Producto[cmbProducto.SelectedIndex]._Precio_Compra.ToString();
 
         }
 
@@ -176,7 +176,7 @@ namespace Trabajo_Practico
                 List<BE.Ventas> venta = gestor.ListarID(int.Parse(cmbTotalVentas.Text));
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = gestor.ListarID(Venta[0]._IDClientes);
-                txtVentas.Text = Venta[cmbTotalVentas.SelectedIndex]._IDClientes + "  " + Venta[0]._IDClientes;
+                txtVentas.Text = Venta[cmbTotalVentas.SelectedIndex]._IDClientes + "" + Venta[0]._IDClientes;
                 for (int i = 0; i < venta.Count; i++)
                 {
                     dataGridView1.DataSource = null;

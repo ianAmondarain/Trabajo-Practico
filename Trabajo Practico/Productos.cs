@@ -63,7 +63,7 @@ namespace Trabajo_Practico
         private void Modificar_Click(object sender, EventArgs e)
         {
             Prod = new BE.Producto();
-            Prod._ID =int.Parse(txtID.Text);
+            Prod._ID = int.Parse(txtID.Text);
             Prod._Descripcion = txtDescripcion.Text;
             Prod._Stock = int.Parse(txtStock.Text);
             Prod._Precio_Compra = float.Parse(txtPrecioCompra.Text);
@@ -135,7 +135,7 @@ namespace Trabajo_Practico
         private void DataProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DialogResult result;
-            result = MessageBox.Show("Desea eliminar el usuario ?", "Eliminando registros...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            result = MessageBox.Show("Desea eliminar el producto ?", "Eliminando registros...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -143,7 +143,7 @@ namespace Trabajo_Practico
                 {
                     Prod = (BE.Producto)DataProductos.Rows[e.RowIndex].DataBoundItem;
                     gestor.Eliminar(Prod);
-                    MessageBox.Show("usuario eliminado....");
+                    MessageBox.Show("producto eliminado....");
                     Listar();
                 }
                 catch (Exception ex)

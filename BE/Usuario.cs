@@ -8,6 +8,7 @@ namespace BE
 {
     public class Usuario
     {
+        
         private int Idusuario;
 
         public int _Idusuario

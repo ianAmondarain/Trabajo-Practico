@@ -12,14 +12,17 @@ namespace Trabajo_Practico
 {
     public partial class Login : Form
     {
+       
+       
         public Login()
         {
             InitializeComponent();
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,10 +67,10 @@ namespace Trabajo_Practico
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+     
+        private void label3_Click(object sender, EventArgs e)
         {
-            Crear_Usuarios usuario = new Crear_Usuarios();
-            usuario.Show();
+
         }
     }
 }

@@ -47,6 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ENCRYPTMD5.cs" />
     <Compile Include="Login_DAL.cs" />
     <Compile Include="Producto_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

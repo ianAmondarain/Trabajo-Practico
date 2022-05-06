@@ -43,7 +43,7 @@ namespace DAL
 
             Parametro[0] = new SqlParameter("@IDVentas", v._IDVentas);
 
-            return conexiones.Escribir("Eliminar_Venta", Parametro);
+            return conexiones.Escribir("Eliminar_Ventas", Parametro);
 
         }
         public List<BE.Ventas> Listar()

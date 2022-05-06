@@ -23,6 +23,13 @@ namespace BE
             get { return IDClientes; }
             set { IDClientes = value; }
         }
+        private string Descripcion;
+
+        public string _Descripcion
+        {
+            get { return Descripcion; }
+            set { Descripcion = value; }
+        }
 
         private int Cantidad;
 
@@ -39,13 +46,7 @@ namespace BE
             get { return PrecioUnitario; }
             set { PrecioUnitario = value; }
         }
-        private string Descripcion;
-
-        public string _Descripcion
-        {
-            get { return Descripcion; }
-            set { Descripcion = value; }
-        }
+        
 
         private float PrecioVenta;
 

@@ -31,10 +31,6 @@ namespace DAL
             return conexiones.Escribir("Editar_Usuarios", parametro);
         }
 
-        public static bool Autenticar(string usuario,string passsword)
-        {
-
-        }
         public List<BE.Usuario> Listar()
         {
             List<BE.Usuario> ls = new List<BE.Usuario>();

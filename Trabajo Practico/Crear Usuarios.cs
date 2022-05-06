@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
+using System.Security.Cryptography;
 
 namespace Trabajo_Practico
 {
@@ -16,6 +18,8 @@ namespace Trabajo_Practico
         {
             InitializeComponent();
         }
+        
+     
         BE.Usuario usuario;
         BLL.Usuario_BLL gestor = new BLL.Usuario_BLL();
         private void Crear_Usuarios_Load(object sender, EventArgs e)
@@ -24,10 +28,12 @@ namespace Trabajo_Practico
         }
         void Agregar_Usuario()
         {
+            
             usuario = new BE.Usuario();
             usuario._Idusuario = int.Parse(txtID.Text);
             usuario._Login = txtUsuario.Text;
             usuario._Contraseña = txtContraseña.Text;
+            
             try
             {
                 gestor.Agregar(usuario);
@@ -69,6 +75,7 @@ namespace Trabajo_Practico
             {
                 MessageBox.Show(Ex.Message);
             }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)

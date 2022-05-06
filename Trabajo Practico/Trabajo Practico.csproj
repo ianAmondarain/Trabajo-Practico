@@ -64,6 +64,7 @@
     <Compile Include="Crear Usuarios.Designer.cs">
       <DependentUpon>Crear Usuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="ENCRYPTMD5.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

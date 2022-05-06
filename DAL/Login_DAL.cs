@@ -13,6 +13,7 @@ namespace DAL
 
         public static bool ExisteUsuario( string Usuario,string Constraseña)
         {
+            
             if
             (adaptador.ExisteUsuario(Usuario, Constraseña)  == null)
             {

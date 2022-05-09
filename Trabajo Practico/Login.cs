@@ -12,7 +12,8 @@ namespace Trabajo_Practico
 {
     public partial class Login : Form
     {
-       
+        Crear_Usuarios usuario = new Crear_Usuarios();
+
        
         public Login()
         {

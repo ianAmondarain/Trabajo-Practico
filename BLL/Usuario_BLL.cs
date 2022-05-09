@@ -21,6 +21,12 @@ namespace BLL
             return mapper.Modificar(US);
         }
 
+        public string Eliminar(BE.Usuario US)
+        {
+            return mapper.Eliminar(US);
+        }
+
+
         public List<BE.Usuario> Listar()
         {
             List<BE.Usuario> Usuario = mapper.Listar();

@@ -19,7 +19,7 @@ namespace BE
 
         private string Login;
 
-        public string _Login
+        public string usuario
         {
             get { return Login; }
             set { Login = value; }

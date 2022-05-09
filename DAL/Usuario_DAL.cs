@@ -10,6 +10,7 @@ namespace DAL
 {
     public class Usuario_DAL
     {
+        
         Conexion conexiones = new Conexion();
 
         public string Agregar(BE.Usuario usu)
@@ -17,7 +18,7 @@ namespace DAL
 
             SqlParameter[] parametro = new SqlParameter[3];
             parametro[0] = new SqlParameter("@ID", usu._Idusuario);
-            parametro[1] = new SqlParameter("@Usuario", usu._Login);
+            parametro[1] = new SqlParameter("@Usuario", usu.usuario);
             parametro[2] = new SqlParameter("@Contraseña", usu._Contraseña);
             return conexiones.Escribir("Ingresar_Usuarios", parametro);
         }
@@ -26,9 +27,18 @@ namespace DAL
         {
             SqlParameter[] parametro = new SqlParameter[3];
             parametro[0] = new SqlParameter("@ID", usu._Idusuario);
-            parametro[1] = new SqlParameter("@Usuario", usu._Login);
+            parametro[1] = new SqlParameter("@Usuario", usu.usuario);
             parametro[2] = new SqlParameter("@Contraseña", usu._Contraseña);
             return conexiones.Escribir("Editar_Usuarios", parametro);
+        }
+
+        public string Eliminar(BE.Usuario usu)
+        {
+            SqlParameter[] Parametro = new SqlParameter[1];
+
+            Parametro[0] = new SqlParameter("@Idusuario", usu._Idusuario);
+
+            return conexiones.Escribir("Eliminar_Usuario", Parametro);
         }
 
         public List<BE.Usuario> Listar()
@@ -39,7 +49,7 @@ namespace DAL
             {
                 BE.Usuario usu = new BE.Usuario();
                 usu._Idusuario = int.Parse(Registro["ID"].ToString());
-                usu._Login = Registro["Usuario"].ToString();
+                usu.usuario = Registro["Usuario"].ToString();
                 usu._Contraseña = Registro["Contraseña"].ToString();
                 ls.Add(usu);
             }

@@ -14,24 +14,25 @@ namespace Trabajo_Practico
 {
     public partial class Crear_Usuarios : Form
     {
+        BE.Usuario usuario;
+        BLL.Usuario_BLL gestor = new BLL.Usuario_BLL();
+
         public Crear_Usuarios()
         {
             InitializeComponent();
         }
         
-     
-        BE.Usuario usuario;
-        BLL.Usuario_BLL gestor = new BLL.Usuario_BLL();
         private void Crear_Usuarios_Load(object sender, EventArgs e)
         {
             VerDatos();
         }
+
         void Agregar_Usuario()
         {
             
             usuario = new BE.Usuario();
             usuario._Idusuario = int.Parse(txtID.Text);
-            usuario._Login = txtUsuario.Text;
+            usuario.usuario = txtUsuario.Text;
             usuario._Contraseña = txtContraseña.Text;
             
             try
@@ -46,6 +47,7 @@ namespace Trabajo_Practico
                 MessageBox.Show(Ex.Message);
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -63,7 +65,7 @@ namespace Trabajo_Practico
         {
             usuario = new BE.Usuario();
             usuario._Idusuario = int.Parse(txtID.Text);
-            usuario._Login = txtUsuario.Text;
+            usuario.usuario = txtUsuario.Text;
             usuario._Contraseña = txtContraseña.Text;
             try
             {
@@ -75,13 +77,24 @@ namespace Trabajo_Practico
             {
                 MessageBox.Show(Ex.Message);
             }
-            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            usuario = new BE.Usuario();
+            usuario._Idusuario = int.Parse(txtID.Text);
+            try
+            {
+                gestor.Eliminar(usuario);
+                MessageBox.Show("producto eliminado");
+                VerDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
+
         void VerDatos()
         {
             dataGridView1.DataSource = null;
@@ -94,7 +107,7 @@ namespace Trabajo_Practico
             {
                 usuario = (BE.Usuario)dataGridView1.Rows[e.RowIndex].DataBoundItem;
                 txtID.Text = usuario._Idusuario.ToString();
-                txtUsuario.Text = usuario._Login;
+                txtUsuario.Text = usuario.usuario;
                 txtContraseña.Text = usuario._Contraseña;
             }
             catch (Exception ex)

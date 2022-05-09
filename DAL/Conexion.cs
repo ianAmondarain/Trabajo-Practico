@@ -10,31 +10,58 @@ namespace DAL
 {
     public class Conexion
     {
-        SqlConnection Conexiones = new SqlConnection();
+        private static object _lock = new Object();
+        private static SqlConnection conexion;
+        //SqlConnection Conexiones = new SqlConnection();
 
-        void Abrir()
+        public static SqlConnection GetInstance
         {
-            try
+            get
             {
-                Conexiones.ConnectionString = @"Data Source=.;Initial Catalog=TPFinal;Integrated Security=True";
-                Conexiones.Open();
-            }
-            catch(Exception)
-            {
+                if (conexion == null) throw new Exception("Conexion establecida");
 
+                return conexion;
+            }
+        } 
+
+        public static SqlConnection Abrir()
+        {
+            lock(_lock)
+            {
+                if (conexion == null)
+                {
+                    conexion = new SqlConnection();
+                    conexion.ConnectionString = @"Data Source=.;Initial Catalog=TPFinal;Integrated Security=True";
+                    conexion.Open();
+                    return conexion;
+                }
+                else
+                {
+                    throw new Exception("conexion ya establecida correctamente");
+                }
+            }
+        }
+
+        public static void Cerrar()
+        {
+            lock (_lock) { }
+            if (conexion != null)
+            {
+                conexion.Close();
+                conexion = null;
+            }
+            else
+            {
+                throw new Exception("conexion no establecida");
             }
         }
         
-        void Cerrar()
-        {
-            Conexiones.Close();
-        }
 
         SqlTransaction TR;
 
         void IniciarTR()
         {
-            TR = Conexiones.BeginTransaction();
+            TR = conexion.BeginTransaction();
         }
         void ConfirmarTR()
         {
@@ -51,7 +78,7 @@ namespace DAL
             Abrir();
             IniciarTR();
             SqlCommand CMD = new SqlCommand();
-            CMD.Connection = Conexiones;
+            CMD.Connection = conexion;
             CMD.CommandType = CommandType.StoredProcedure;
             CMD.CommandText = st;
             CMD.Parameters.AddRange(Parametro);
@@ -81,7 +108,7 @@ namespace DAL
             {
                 Adaptador.SelectCommand.Parameters.AddRange(Parametro);
             }
-            Adaptador.SelectCommand.Connection = Conexiones;
+            Adaptador.SelectCommand.Connection = conexion;
             Adaptador.Fill(Tabla);
             Cerrar();
             return Tabla;

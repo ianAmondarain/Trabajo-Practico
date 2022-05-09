@@ -19,6 +19,7 @@ namespace Trabajo_Practico
         }
         BE.Cliente Cliente;
         BLL.Cliente_BLL gestor = new BLL.Cliente_BLL();
+
         private void Clientes_Load(object sender, EventArgs e)
         {
             VerDatos();

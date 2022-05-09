@@ -14,14 +14,14 @@ namespace Trabajo_Practico
 {
     public partial class Crear_Usuarios : Form
     {
-        BE.Usuario usuario;
-        BLL.Usuario_BLL gestor = new BLL.Usuario_BLL();
-
+        
         public Crear_Usuarios()
         {
             InitializeComponent();
         }
-        
+
+        BLL.Usuario_BLL gestor = new BLL.Usuario_BLL();
+        BE.Usuario Usuario;
         private void Crear_Usuarios_Load(object sender, EventArgs e)
         {
             VerDatos();
@@ -29,15 +29,15 @@ namespace Trabajo_Practico
 
         void Agregar_Usuario()
         {
-            
-            usuario = new BE.Usuario();
-            usuario._Idusuario = int.Parse(txtID.Text);
-            usuario.usuario = txtUsuario.Text;
-            usuario._Contraseña = txtContraseña.Text;
+
+            Usuario = new BE.Usuario();
+            Usuario._Idusuario = int.Parse(txtID.Text);
+            Usuario.usuario = txtUsuario.Text;
+            Usuario._Contraseña = txtContraseña.Text;
             
             try
             {
-                gestor.Agregar(usuario);
+                gestor.Agregar(Usuario);
                 MessageBox.Show("Agregado Correctamente...");
                 VerDatos();
                 txtID.Text = txtUsuario.Text = txtContraseña.Text = "";
@@ -63,13 +63,13 @@ namespace Trabajo_Practico
 
         private void button2_Click(object sender, EventArgs e)
         {
-            usuario = new BE.Usuario();
-            usuario._Idusuario = int.Parse(txtID.Text);
-            usuario.usuario = txtUsuario.Text;
-            usuario._Contraseña = txtContraseña.Text;
+            Usuario = new BE.Usuario();
+            Usuario._Idusuario = int.Parse(txtID.Text);
+            Usuario.usuario = txtUsuario.Text;
+            Usuario._Contraseña = txtContraseña.Text;
             try
             {
-                gestor.Modificar(usuario);
+                gestor.Modificar(Usuario);
                 MessageBox.Show("Modificado correctamente");
                 VerDatos();
             }
@@ -81,11 +81,11 @@ namespace Trabajo_Practico
 
         private void button3_Click(object sender, EventArgs e)
         {
-            usuario = new BE.Usuario();
-            usuario._Idusuario = int.Parse(txtID.Text);
+            Usuario = new BE.Usuario();
+            Usuario._Idusuario = int.Parse(txtID.Text);
             try
             {
-                gestor.Eliminar(usuario);
+                gestor.Eliminar(Usuario);
                 MessageBox.Show("producto eliminado");
                 VerDatos();
             }
@@ -105,10 +105,10 @@ namespace Trabajo_Practico
         {
             try
             {
-                usuario = (BE.Usuario)dataGridView1.Rows[e.RowIndex].DataBoundItem;
-                txtID.Text = usuario._Idusuario.ToString();
-                txtUsuario.Text = usuario.usuario;
-                txtContraseña.Text = usuario._Contraseña;
+                Usuario = (BE.Usuario)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                txtID.Text = Usuario._Idusuario.ToString();
+                txtUsuario.Text = Usuario.usuario;
+                txtContraseña.Text = Usuario._Contraseña;
             }
             catch (Exception ex)
             {

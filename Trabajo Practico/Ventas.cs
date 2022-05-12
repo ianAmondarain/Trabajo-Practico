@@ -57,6 +57,7 @@ namespace Trabajo_Practico
         }
         void limpiartxt()
         {
+            
             txtVentas.Clear();
             txtCantidad.Clear();
             txtPrecioCompra.Clear();
@@ -150,9 +151,9 @@ namespace Trabajo_Practico
                 txtPrecioCompra.Text = temp._PrecioUnitario.ToString();
                 txtPrecioVenta.Text = temp._PrecioVenta.ToString();
             }
-            catch
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
 

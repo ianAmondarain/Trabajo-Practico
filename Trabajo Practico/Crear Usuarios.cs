@@ -35,14 +35,14 @@ namespace Trabajo_Practico
             Usuario = new BE.Usuario();
             Usuario._Idusuario = int.Parse(txtID.Text);
             Usuario.usuario = txtUsuario.Text;
-            Usuario._Contraseña = txtContraseña.Text;
+             Usuario._Contraseña = txtContraseña.Text;
             
             try
             {
                 Gestor.Agregar(Usuario);
                 MessageBox.Show("Agregado Correctamente...");
                 VerDatos();
-                txtID.Text = txtUsuario.Text = txtContraseña.Text = "";
+                txtUsuario.Text = txtContraseña.Text = "";
             }
             catch (Exception Ex)
             {
@@ -107,7 +107,7 @@ namespace Trabajo_Practico
         {
             try
             {
-                Usuario = (BE.Usuario)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                Usuario = (Usuario)dataGridView1.Rows[e.RowIndex].DataBoundItem;
                 txtID.Text = Usuario._Idusuario.ToString();
                 txtUsuario.Text = Usuario.usuario;
                 txtContraseña.Text = Usuario._Contraseña;

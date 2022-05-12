@@ -29,12 +29,12 @@ namespace BLL
             return mapper.Agregar(US);
         }
 
-        public static string Modificar(BE.Usuario US)
+        public static string Modificar(Usuario US)
         {
             return mapper.Modificar(US);
         }
 
-        public static string Eliminar(BE.Usuario US)
+        public static string Eliminar(Usuario US)
         {
             return mapper.Eliminar(US);
         }
@@ -54,7 +54,6 @@ namespace BLL
             if (mapper.Login(login, passHash))
             {
                 Usuario usuario = new Usuario();
-                usuario.usuario = login;
                 usuario._Contraseña = passHash;
                 SessionManager.login(usuario);
                 return true;

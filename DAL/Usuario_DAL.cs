@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BE;
 
 namespace DAL
 {
@@ -13,26 +14,24 @@ namespace DAL
         
         Conexion conexiones = new Conexion();
 
-        public string Agregar(BE.Usuario usu)
+        public string Agregar(Usuario usu)
         {
 
-            SqlParameter[] parametro = new SqlParameter[3];
-            parametro[0] = new SqlParameter("@ID", usu._Idusuario);
-            parametro[1] = new SqlParameter("@Usuario", usu.usuario);
-            parametro[2] = new SqlParameter("@Contraseña", usu._Contraseña);
+            SqlParameter[] parametro = new SqlParameter[2];
+            parametro[0] = new SqlParameter("@Usuario", usu.usuario);
+            parametro[1] = new SqlParameter("@Contraseña", usu._Contraseña);
             return conexiones.Escribir("Ingresar_Usuarios", parametro);
         }
 
-        public string Modificar(BE.Usuario usu)
+        public string Modificar(Usuario usu)
         {
-            SqlParameter[] parametro = new SqlParameter[3];
-            parametro[0] = new SqlParameter("@ID", usu._Idusuario);
-            parametro[1] = new SqlParameter("@Usuario", usu.usuario);
-            parametro[2] = new SqlParameter("@Contraseña", usu._Contraseña);
+            SqlParameter[] parametro = new SqlParameter[2];
+            parametro[0] = new SqlParameter("@Usuario", usu.usuario);
+            parametro[1] = new SqlParameter("@Contraseña", usu._Contraseña);
             return conexiones.Escribir("Editar_Usuarios", parametro);
         }
 
-        public string Eliminar(BE.Usuario usu)
+        public string Eliminar(Usuario usu)
         {
             SqlParameter[] Parametro = new SqlParameter[1];
 
@@ -41,13 +40,13 @@ namespace DAL
             return conexiones.Escribir("Eliminar_Usuario", Parametro);
         }
 
-        public List<BE.Usuario> Listar()
+        public List<Usuario> Listar()
         {
-            List<BE.Usuario> ls = new List<BE.Usuario>();
+            List<Usuario> ls = new List<Usuario>();
             DataTable tabla = conexiones.Leer("Mostrar_Usuario", null);
             foreach (DataRow Registro in tabla.Rows)
             {
-                BE.Usuario usu = new BE.Usuario();
+                Usuario usu = new Usuario();
                 usu._Idusuario = int.Parse(Registro["ID"].ToString());
                 usu.usuario = Registro["Usuario"].ToString();
                 usu._Contraseña = Registro["Contraseña"].ToString();
@@ -59,13 +58,13 @@ namespace DAL
         public bool Login(string Usuario, string Contraseña)
         {
             
-           BE.Usuario usu = new BE.Usuario();
+           Usuario usu = new Usuario();
 
             SqlParameter[] Parametro = new SqlParameter[2];
 
             Parametro[0] = new SqlParameter("@Usuario", Usuario);
             Parametro[1] = new SqlParameter("@Contraseña", Contraseña);
-            DataTable Tabla = conexiones.Leer("Ingresar_Usuarios", Parametro);
+            DataTable Tabla = conexiones.Leer("ExisteUsuario", Parametro);
             foreach (DataRow Registro in Tabla.Rows)
             {
                 usu._Idusuario = int.Parse(Registro["ID"].ToString());
@@ -73,10 +72,13 @@ namespace DAL
                 usu._Contraseña = Registro["Contraseña"].ToString();
             }
             if (usu.usuario == null)
+            {
                 return false;
+            }
             else
+            {
                 return true;
-
+            }
 
         }
     }

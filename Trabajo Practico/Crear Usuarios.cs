@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using BE;
 using DAL;
 using System.Security.Cryptography;
 
@@ -20,14 +22,14 @@ namespace Trabajo_Practico
             InitializeComponent();
         }
 
-        BLL.Usuario_BLL gestor = new BLL.Usuario_BLL();
-        BE.Usuario Usuario;
+       Usuario_DAL Gestor = new Usuario_DAL();
+        Usuario Usuario = new Usuario();
         private void Crear_Usuarios_Load(object sender, EventArgs e)
         {
             VerDatos();
         }
 
-        void Agregar_Usuario()
+        public void Agregar_Usuario()
         {
 
             Usuario = new BE.Usuario();
@@ -37,7 +39,7 @@ namespace Trabajo_Practico
             
             try
             {
-                gestor.Agregar(Usuario);
+                Gestor.Agregar(Usuario);
                 MessageBox.Show("Agregado Correctamente...");
                 VerDatos();
                 txtID.Text = txtUsuario.Text = txtContraseña.Text = "";
@@ -69,7 +71,7 @@ namespace Trabajo_Practico
             Usuario._Contraseña = txtContraseña.Text;
             try
             {
-                gestor.Modificar(Usuario);
+                Gestor.Modificar(Usuario);
                 MessageBox.Show("Modificado correctamente");
                 VerDatos();
             }
@@ -85,7 +87,7 @@ namespace Trabajo_Practico
             Usuario._Idusuario = int.Parse(txtID.Text);
             try
             {
-                gestor.Eliminar(Usuario);
+                Gestor.Eliminar(Usuario);
                 MessageBox.Show("producto eliminado");
                 VerDatos();
             }
@@ -98,7 +100,7 @@ namespace Trabajo_Practico
         void VerDatos()
         {
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = gestor.Listar();
+            dataGridView1.DataSource = Gestor.Listar();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -16,19 +16,21 @@ namespace DAL
         public string Agregar(BE.Usuario usu)
         {
 
-            SqlParameter[] parametro = new SqlParameter[3];
+            SqlParameter[] parametro = new SqlParameter[4];
             parametro[0] = new SqlParameter("@idusuario", usu._Idusuario);
             parametro[1] = new SqlParameter("@Usuario", usu.usuario);
             parametro[2] = new SqlParameter("@Contraseña", usu._Contraseña);
+            parametro[3] = new SqlParameter("IdRol", usu._IdRol);
             return conexiones.Escribir("Ingresar_Usuarios", parametro);
         }
 
         public string Modificar(BE.Usuario usu)
         {
-            SqlParameter[] parametro = new SqlParameter[3];
+            SqlParameter[] parametro = new SqlParameter[4];
             parametro[0] = new SqlParameter("@Id", usu._Idusuario);
             parametro[1] = new SqlParameter("@Usuario", usu.usuario);
             parametro[2] = new SqlParameter("@Contraseña", usu._Contraseña);
+            parametro[3] = new SqlParameter("IdRol", usu._IdRol);
             return conexiones.Escribir("Editar_Usuarios", parametro);
         }
 
@@ -51,6 +53,7 @@ namespace DAL
                 usu._Idusuario = int.Parse(Registro["Id"].ToString());
                 usu.usuario = Registro["Usuario"].ToString();
                 usu._Contraseña = Registro["Contraseña"].ToString();
+                usu._IdRol = Registro["IdRol"].ToString();
                 ls.Add(usu);
             }
             return ls;
@@ -71,6 +74,7 @@ namespace DAL
                 usu._Idusuario = int.Parse(Registro["Id"].ToString());
                 usu.usuario = Registro["Usuario"].ToString();
                 usu._Contraseña = Registro["Contraseña"].ToString();
+                usu._IdRol = Registro["IdRol"].ToString();
             }
             if (usu.usuario == null)
             {

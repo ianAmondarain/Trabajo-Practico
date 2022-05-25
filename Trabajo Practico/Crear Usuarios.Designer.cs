@@ -40,6 +40,8 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtRol = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,16 +53,17 @@
             this.dataGridView1.Location = new System.Drawing.Point(230, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(472, 311);
+            this.dataGridView1.Size = new System.Drawing.Size(581, 311);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Agregar
             // 
             this.Agregar.BackColor = System.Drawing.Color.Transparent;
             this.Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Agregar.Image = ((System.Drawing.Image)(resources.GetObject("Agregar.Image")));
-            this.Agregar.Location = new System.Drawing.Point(37, 204);
+            this.Agregar.Location = new System.Drawing.Point(37, 223);
             this.Agregar.Name = "Agregar";
             this.Agregar.Size = new System.Drawing.Size(75, 51);
             this.Agregar.TabIndex = 1;
@@ -73,7 +76,7 @@
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(135, 204);
+            this.button2.Location = new System.Drawing.Point(137, 223);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 51);
             this.button2.TabIndex = 2;
@@ -85,7 +88,7 @@
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(37, 261);
+            this.button3.Location = new System.Drawing.Point(37, 280);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 62);
             this.button3.TabIndex = 3;
@@ -148,20 +151,40 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(37, 348);
+            this.button1.Location = new System.Drawing.Point(37, 358);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 26);
             this.button1.TabIndex = 12;
             this.button1.Text = "master";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Location = new System.Drawing.Point(34, 193);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Rol";
+            // 
+            // txtRol
+            // 
+            this.txtRol.Location = new System.Drawing.Point(101, 186);
+            this.txtRol.Name = "txtRol";
+            this.txtRol.Size = new System.Drawing.Size(100, 20);
+            this.txtRol.TabIndex = 13;
             // 
             // Crear_Usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(714, 496);
+            this.ClientSize = new System.Drawing.Size(850, 405);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtRol);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -196,5 +219,7 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtRol;
     }
 }

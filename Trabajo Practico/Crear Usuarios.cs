@@ -35,8 +35,8 @@ namespace Trabajo_Practico
             Usuario = new BE.Usuario();
             Usuario._Idusuario = int.Parse(txtID.Text);
             Usuario.usuario = txtUsuario.Text;
-             Usuario._Contraseña = txtContraseña.Text;
-            
+            Usuario._Contraseña = txtContraseña.Text;
+            Usuario._IdRol = txtRol.Text;
             try
             {
                 Gestor.Agregar(Usuario);
@@ -69,6 +69,7 @@ namespace Trabajo_Practico
             Usuario._Idusuario = int.Parse(txtID.Text);
             Usuario.usuario = txtUsuario.Text;
             Usuario._Contraseña = txtContraseña.Text;
+            Usuario._IdRol = txtRol.Text;
             try
             {
                 Gestor.Modificar(Usuario);
@@ -111,6 +112,8 @@ namespace Trabajo_Practico
                 txtID.Text = Usuario._Idusuario.ToString();
                 txtUsuario.Text = Usuario.usuario;
                 txtContraseña.Text = Usuario._Contraseña;
+                txtRol.Text = Usuario._IdRol;
+               
             }
             catch (Exception ex)
             {
@@ -127,6 +130,11 @@ namespace Trabajo_Practico
             catch{
                 MessageBox.Show("usuario no encontrado");
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

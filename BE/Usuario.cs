@@ -32,6 +32,14 @@ namespace BE
             set { Contraseña = value; }
         }
 
+        private string IdRol;
+
+        public string _IdRol
+        {
+            get { return IdRol; }
+            set { IdRol = value; }
+        }
+
 
     }
 }

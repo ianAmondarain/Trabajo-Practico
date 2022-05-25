@@ -73,5 +73,10 @@ namespace Trabajo_Practico
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

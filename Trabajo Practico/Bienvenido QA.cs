@@ -60,7 +60,8 @@ namespace Trabajo_Practico
 
         private void btnRoles_Click(object sender, EventArgs e)
         {
-            
+            Rol.Roles roles = new Rol.Roles();
+            roles.Show(); 
         }
     }
 }

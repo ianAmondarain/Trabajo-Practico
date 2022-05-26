@@ -56,7 +56,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(581, 311);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+
             // 
             // Agregar
             // 
@@ -157,7 +157,6 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "master";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label2
             // 

@@ -194,7 +194,7 @@
             // 
             this.Limpiar.BackColor = System.Drawing.Color.Transparent;
             this.Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Limpiar.Location = new System.Drawing.Point(111, 197);
+            this.Limpiar.Location = new System.Drawing.Point(136, 197);
             this.Limpiar.Name = "Limpiar";
             this.Limpiar.Size = new System.Drawing.Size(75, 23);
             this.Limpiar.TabIndex = 18;
@@ -223,7 +223,7 @@
             // 
             this.cmbTotalVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTotalVentas.FormattingEnabled = true;
-            this.cmbTotalVentas.Location = new System.Drawing.Point(12, 293);
+            this.cmbTotalVentas.Location = new System.Drawing.Point(12, 321);
             this.cmbTotalVentas.Name = "cmbTotalVentas";
             this.cmbTotalVentas.Size = new System.Drawing.Size(121, 21);
             this.cmbTotalVentas.TabIndex = 23;
@@ -241,7 +241,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(9, 326);
+            this.label7.Location = new System.Drawing.Point(12, 345);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(31, 13);
             this.label7.TabIndex = 25;
@@ -287,6 +287,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Ventas";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ventas";
             this.Load += new System.EventHandler(this.Ventas_Load);

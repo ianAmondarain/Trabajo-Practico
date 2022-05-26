@@ -86,6 +86,12 @@
     <Compile Include="Proveedores\Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios\MDIUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios\MDIUsuario.Designer.cs">
+      <DependentUpon>MDIUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </Compile>
     <EmbeddedResource Include="Proveedores\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\MDIUsuario.resx">
+      <DependentUpon>MDIUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>

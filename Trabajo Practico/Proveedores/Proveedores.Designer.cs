@@ -156,6 +156,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Proveedores";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Proveedores";
             this.Load += new System.EventHandler(this.Proveedores_Load);

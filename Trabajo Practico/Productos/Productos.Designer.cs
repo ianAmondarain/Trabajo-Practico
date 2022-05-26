@@ -230,6 +230,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Productos";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.Productos_Load);

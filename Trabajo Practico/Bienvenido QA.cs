@@ -19,7 +19,8 @@ namespace Trabajo_Practico
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Crear_Usuarios usuarios = new Crear_Usuarios();
+            MDIUsuario usuarios = new MDIUsuario();
+            usuarios.MdiParent = this;
             usuarios.Show();
 
         }

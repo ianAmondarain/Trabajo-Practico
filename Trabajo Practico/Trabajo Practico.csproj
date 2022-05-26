@@ -58,6 +58,12 @@
     <Compile Include="Clientes\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rol\Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rol\Roles.Designer.cs">
+      <DependentUpon>Roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\Crear Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,12 +92,6 @@
     <Compile Include="Proveedores\Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\MDIUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios\MDIUsuario.Designer.cs">
-      <DependentUpon>MDIUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ventas\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rol\Roles.resx">
+      <DependentUpon>Roles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\Crear Usuarios.resx">
       <DependentUpon>Crear Usuarios.cs</DependentUpon>
@@ -124,9 +127,6 @@
     </Compile>
     <EmbeddedResource Include="Proveedores\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\MDIUsuario.resx">
-      <DependentUpon>MDIUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>

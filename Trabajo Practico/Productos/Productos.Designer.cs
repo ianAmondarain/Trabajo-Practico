@@ -50,6 +50,8 @@
             // 
             // txtID
             // 
+            this.txtID.BackColor = System.Drawing.Color.White;
+            this.txtID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtID.Location = new System.Drawing.Point(119, 31);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 20);
@@ -57,6 +59,8 @@
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.White;
+            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescripcion.Location = new System.Drawing.Point(119, 57);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
@@ -64,6 +68,8 @@
             // 
             // txtStock
             // 
+            this.txtStock.BackColor = System.Drawing.Color.White;
+            this.txtStock.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStock.Location = new System.Drawing.Point(119, 83);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(100, 20);
@@ -71,6 +77,8 @@
             // 
             // txtPrecioCompra
             // 
+            this.txtPrecioCompra.BackColor = System.Drawing.Color.White;
+            this.txtPrecioCompra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecioCompra.Location = new System.Drawing.Point(119, 109);
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.Size = new System.Drawing.Size(100, 20);
@@ -78,6 +86,8 @@
             // 
             // txtVenta
             // 
+            this.txtVenta.BackColor = System.Drawing.Color.White;
+            this.txtVenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVenta.Location = new System.Drawing.Point(119, 135);
             this.txtVenta.Name = "txtVenta";
             this.txtVenta.Size = new System.Drawing.Size(100, 20);
@@ -87,7 +97,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(65, 37);
+            this.label1.Location = new System.Drawing.Point(91, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 5;
@@ -151,11 +161,10 @@
             this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(12, 186);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 172);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 47);
+            this.btnAgregar.Size = new System.Drawing.Size(88, 66);
             this.btnAgregar.TabIndex = 11;
-            this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -164,9 +173,9 @@
             this.Modificar.BackColor = System.Drawing.Color.Transparent;
             this.Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Modificar.Image = ((System.Drawing.Image)(resources.GetObject("Modificar.Image")));
-            this.Modificar.Location = new System.Drawing.Point(127, 186);
+            this.Modificar.Location = new System.Drawing.Point(127, 172);
             this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(75, 47);
+            this.Modificar.Size = new System.Drawing.Size(92, 66);
             this.Modificar.TabIndex = 12;
             this.Modificar.UseVisualStyleBackColor = false;
             this.Modificar.Click += new System.EventHandler(this.Modificar_Click);
@@ -176,9 +185,9 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(12, 274);
+            this.button1.Location = new System.Drawing.Point(12, 244);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 47);
+            this.button1.Size = new System.Drawing.Size(88, 78);
             this.button1.TabIndex = 13;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);

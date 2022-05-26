@@ -57,6 +57,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Proveedores_DAL.cs" />
+    <Compile Include="Rol_DAL.cs" />
     <Compile Include="Usuario_DAL.cs" />
     <Compile Include="Ventas_DAL.cs" />
   </ItemGroup>

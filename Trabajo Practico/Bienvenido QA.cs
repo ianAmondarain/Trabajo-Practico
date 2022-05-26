@@ -19,15 +19,14 @@ namespace Trabajo_Practico
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MDIUsuario usuarios = new MDIUsuario();
-            usuarios.MdiParent = this;
+            Crear_Usuarios usuarios = new Crear_Usuarios();
             usuarios.Show();
 
         }
 
         private void Bienvenido_QA_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -57,6 +56,11 @@ namespace Trabajo_Practico
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

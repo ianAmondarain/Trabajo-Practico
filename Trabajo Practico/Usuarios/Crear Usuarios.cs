@@ -24,9 +24,11 @@ namespace Trabajo_Practico
 
        Usuario_DAL Gestor = new Usuario_DAL();
         Usuario Usuario = new Usuario();
+
         private void Crear_Usuarios_Load(object sender, EventArgs e)
         {
             VerDatos();
+            LlenarComboRol();
         }
 
         public void Agregar_Usuario()
@@ -36,7 +38,7 @@ namespace Trabajo_Practico
             Usuario._Idusuario = int.Parse(txtID.Text);
             Usuario.usuario = txtUsuario.Text;
             Usuario._Contraseña = txtContraseña.Text;
-            Usuario._IdRol = txtRol.Text;
+            Usuario._IdRol = cmbRol.Text;
             try
             {
                 Gestor.Agregar(Usuario);
@@ -69,7 +71,7 @@ namespace Trabajo_Practico
             Usuario._Idusuario = int.Parse(txtID.Text);
             Usuario.usuario = txtUsuario.Text;
             Usuario._Contraseña = txtContraseña.Text;
-            Usuario._IdRol = txtRol.Text;
+            Usuario._IdRol = cmbRol.Text;
             try
             {
                 Gestor.Modificar(Usuario);
@@ -104,6 +106,18 @@ namespace Trabajo_Practico
             dataGridView1.DataSource = Gestor.Listar();
         }
 
+        void LlenarComboRol()
+        {
+            List<BE.Usuario> Cliente = Gestor.Listar();
+
+            for (int i = 0; i < Cliente.Count; i++)
+            {
+                cmbRol.Items.Add(Cliente[i]._IdRol);
+                cmbRol.Items.Add(Cliente[i]._IdRol);
+            }
+
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -112,7 +126,7 @@ namespace Trabajo_Practico
                 txtID.Text = Usuario._Idusuario.ToString();
                 txtUsuario.Text = Usuario.usuario;
                 txtContraseña.Text = Usuario._Contraseña;
-                txtRol.Text = Usuario._IdRol;
+                cmbRol.Text = Usuario._IdRol;
                
             }
             catch (Exception ex)

@@ -52,59 +52,59 @@
     <Compile Include="Bienvenido QA.Designer.cs">
       <DependentUpon>Bienvenido QA.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes.cs">
+    <Compile Include="Clientes\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes.Designer.cs">
+    <Compile Include="Clientes\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Crear Usuarios.cs">
+    <Compile Include="Usuarios\Crear Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Crear Usuarios.Designer.cs">
+    <Compile Include="Usuarios\Crear Usuarios.Designer.cs">
       <DependentUpon>Crear Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="ENCRYPTMD5.cs" />
-    <Compile Include="Login.cs">
+    <Compile Include="Log In\ENCRYPTMD5.cs" />
+    <Compile Include="Log In\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="Log In\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="MiControl.cs" />
-    <Compile Include="Productos.cs">
+    <Compile Include="Log In\MiControl.cs" />
+    <Compile Include="Productos\Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos.Designer.cs">
+    <Compile Include="Productos\Productos.Designer.cs">
       <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proveedores.cs">
+    <Compile Include="Proveedores\Proveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proveedores.Designer.cs">
+    <Compile Include="Proveedores\Proveedores.Designer.cs">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas.cs">
+    <Compile Include="Ventas\Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas.Designer.cs">
+    <Compile Include="Ventas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Bienvenido QA.resx">
       <DependentUpon>Bienvenido QA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes.resx">
+    <EmbeddedResource Include="Clientes\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Crear Usuarios.resx">
+    <EmbeddedResource Include="Usuarios\Crear Usuarios.resx">
       <DependentUpon>Crear Usuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
+    <EmbeddedResource Include="Log In\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos.resx">
+    <EmbeddedResource Include="Productos\Productos.resx">
       <DependentUpon>Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -116,10 +116,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Proveedores.resx">
+    <EmbeddedResource Include="Proveedores\Proveedores.resx">
       <DependentUpon>Proveedores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas.resx">
+    <EmbeddedResource Include="Ventas\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

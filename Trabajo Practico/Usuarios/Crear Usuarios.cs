@@ -124,8 +124,8 @@ namespace Trabajo_Practico
         private void button1_Click_1(object sender, EventArgs e)
         {
             try{ 
-            mdi_master mdi = new mdi_master();
-            mdi.Show();
+            //mdi_master mdi = new mdi_master();
+            //mdi.Show();
             }
             catch{
                 MessageBox.Show("usuario no encontrado");

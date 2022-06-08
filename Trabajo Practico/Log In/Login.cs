@@ -52,7 +52,7 @@ namespace Trabajo_Practico
                     errorProvider1.SetError(textBox2, "");
                     if (!DAL.Login_DAL.ExisteUsuario(textBox1.Text, textBox2.Text))
                     {
-                        MessageBox.Show("Usuario y contraseña incorrrectos");
+                        MessageBox.Show("Usuario y contraseña incorrrecto");
                         textBox1.Text = "";
                         textBox2.Text = "";
                         textBox1.Focus();

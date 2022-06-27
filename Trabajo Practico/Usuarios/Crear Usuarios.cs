@@ -31,20 +31,42 @@ namespace Trabajo_Practico
             LlenarComboRol();
         }
 
-        public void Agregar_Usuario()
+        public static string Encriptar(string _cadenaAencriptar)
+        {
+            string result = string.Empty;
+            byte[] encryted =
+            System.Text.Encoding.Unicode.GetBytes(_cadenaAencriptar);
+            result = Convert.ToBase64String(encryted);
+            return result;
+        }
+
+        /// Esta función "desencripta" la cadena que le envíamos en el parámentro de entrada.
+        public static string DesEncriptar(string _cadenaAdesencriptar)
+        {
+            string result = string.Empty;
+            byte[] decryted =
+            Convert.FromBase64String(_cadenaAdesencriptar);
+            //result = 
+            System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
+            result = System.Text.Encoding.Unicode.GetString(decryted);
+            return result;
+        }
+
+        protected void Agregar_Usuario()
         {
 
             Usuario = new BE.Usuario();
-            Usuario._Idusuario = int.Parse(txtID.Text);
+     
+            Usuario._Idusuario =int.Parse(txtID.Text);
             Usuario.usuario = txtUsuario.Text;
-            Usuario._Contraseña = txtContraseña.Text;
+            Usuario._Contraseña = Encriptar(txtContraseña.Text);
             Usuario._IdRol = cmbRol.Text;
             try
             {
                 Gestor.Agregar(Usuario);
                 MessageBox.Show("Agregado Correctamente...");
                 VerDatos();
-                txtUsuario.Text = txtContraseña.Text = "";
+                txtUsuario.Text = DesEncriptar(txtContraseña.Text = "");
             }
             catch (Exception Ex)
             {
@@ -70,7 +92,7 @@ namespace Trabajo_Practico
             Usuario = new BE.Usuario();
             Usuario._Idusuario = int.Parse(txtID.Text);
             Usuario.usuario = txtUsuario.Text;
-            Usuario._Contraseña = txtContraseña.Text;
+            Usuario._Contraseña = DesEncriptar(txtContraseña.Text);
             Usuario._IdRol = cmbRol.Text;
             try
             {
@@ -125,16 +147,14 @@ namespace Trabajo_Practico
                 Usuario = (Usuario)dataGridView1.Rows[e.RowIndex].DataBoundItem;
                 txtID.Text = Usuario._Idusuario.ToString();
                 txtUsuario.Text = Usuario.usuario;
-                txtContraseña.Text = Usuario._Contraseña;
+                txtContraseña.Text = DesEncriptar(Usuario._Contraseña);
                 cmbRol.Text = Usuario._IdRol;
                
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show(ex.ToString());
+                
             }
         }
-
-
     }
 }

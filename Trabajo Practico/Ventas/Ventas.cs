@@ -151,9 +151,9 @@ namespace Trabajo_Practico
                 txtPrecioCompra.Text = temp._PrecioUnitario.ToString();
                 txtPrecioVenta.Text = temp._PrecioVenta.ToString();
             }
-            catch (Exception ex)
+            catch 
             {
-                MessageBox.Show(ex.ToString());
+                
             }
         }
 

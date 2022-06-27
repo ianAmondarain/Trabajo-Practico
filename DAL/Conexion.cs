@@ -31,7 +31,7 @@ namespace DAL
                 if (conexion == null)
                 {
                     conexion = new SqlConnection();
-                    conexion.ConnectionString = @"Data Source=DESKTOP-63938MP\IAN;Initial Catalog=TPFinal;Integrated Security=True";
+                    conexion.ConnectionString = @"Data Source=DESKTOP-63938MP\SQLEXPRESS01;Initial Catalog=TPFinal;Integrated Security=True";
                     conexion.Open();
                     return conexion;
                 }

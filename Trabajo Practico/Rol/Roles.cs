@@ -16,8 +16,8 @@ namespace Trabajo_Practico.Rol
         {
             InitializeComponent();
         }
-        BE.Rol temp;
-        BLL.Rol_BLL gestor = new BLL.Rol_BLL();
+            BE.Rol temp;
+            BLL.Rol_BLL gestor = new BLL.Rol_BLL();
 
         private void Roles_Load(object sender, EventArgs e)
         {

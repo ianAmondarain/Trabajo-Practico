@@ -31,9 +31,16 @@ namespace Trabajo_Practico
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void button4_Click(object sender, EventArgs e)
         {
-            if(textBox1.Text =="")
+            Application.Exit();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
             {
                 errorProvider1.SetError(textBox1, "Ingrese el usuario");
 
@@ -60,23 +67,12 @@ namespace Trabajo_Practico
                     }
                     else
                     {
-                        Bienvenido_QA bienvenido = new Bienvenido_QA();
-                        bienvenido.Show();
+                        panel panel = new panel();
+                        panel.Show(this);
                         this.Hide();
                     }
                 }
             }
-        }
-
-     
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -15,11 +15,11 @@ namespace DAL
         Usuario_DAL usuario = new Usuario_DAL();
         private static UsuarioTableAdapter adaptador = new UsuarioTableAdapter();
         
-        public static bool ExisteUsuario( string Usuario,string Constraseña)
+        public static bool ExisteUsuario( string Usuario,string Contraseña)
         {
             
             if
-            (adaptador.ExisteUsuario(Usuario, Constraseña)  == null)
+            (adaptador.ExisteUsuario(Usuario, Contraseña)  == null)
             {
                 return false;
             }
@@ -28,5 +28,6 @@ namespace DAL
                 return true;
             }
         }
+
     }
 }

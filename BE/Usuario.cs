@@ -40,6 +40,6 @@ namespace BE
             set { IdRol = value; }
         }
 
-
+        
     }
 }

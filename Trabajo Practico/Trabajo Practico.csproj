@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,17 +47,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bienvenido QA.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Bienvenido QA.Designer.cs">
-      <DependentUpon>Bienvenido QA.cs</DependentUpon>
-    </Compile>
     <Compile Include="Clientes\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clientes\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="panel.Designer.cs">
+      <DependentUpon>panel.cs</DependentUpon>
     </Compile>
     <Compile Include="Rol\Roles.cs">
       <SubType>Form</SubType>
@@ -75,7 +82,6 @@
     <Compile Include="Usuarios\Crear Usuarios.Designer.cs">
       <DependentUpon>Crear Usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Log In\ENCRYPTMD5.cs" />
     <Compile Include="Log In\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,11 +109,14 @@
     <Compile Include="Ventas\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Bienvenido QA.resx">
-      <DependentUpon>Bienvenido QA.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Clientes\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="panel.resx">
+      <DependentUpon>panel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rol\Roles.resx">
       <DependentUpon>Roles.cs</DependentUpon>

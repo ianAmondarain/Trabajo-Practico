@@ -44,23 +44,7 @@ namespace Trabajo_Practico
                 MessageBox.Show(Ex.Message);
             }
         }
-        
-        private void button1_Click(object sender, EventArgs e)
-        {
-       
-            try
-            {
-                Agregar_Cliente();
-                MessageBox.Show("Cliente Agregado");
-               
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        
-         
-        }
+  
   
 
      
@@ -72,7 +56,22 @@ namespace Trabajo_Practico
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Agregar_Cliente();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
         {
             Cliente = new BE.Cliente();
             Cliente._IDCLIENTE = int.Parse(txtID.Text);
@@ -92,7 +91,17 @@ namespace Trabajo_Practico
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            Cliente = new BE.Cliente();
+            Cliente._IDCLIENTE = int.Parse(txtID.Text);
+            gestor.Eliminar(Cliente);
+            MessageBox.Show("eliminado correctamente");
+            VerDatos();
+        }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -103,20 +112,10 @@ namespace Trabajo_Practico
                 txtCuit.Text = Cliente._CUIT.ToString();
                 txtTelefono.Text = Cliente._Telefono.ToString();
             }
-            catch 
+            catch
             {
-               
-            }
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Cliente = new BE.Cliente();
-            Cliente._IDCLIENTE = int.Parse(txtID.Text);
-            gestor.Eliminar(Cliente);
-            MessageBox.Show("eliminado correctamente");
-            VerDatos();
-            
+            }
         }
     }
 }

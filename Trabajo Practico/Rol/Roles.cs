@@ -19,33 +19,38 @@ namespace Trabajo_Practico.Rol
             BE.Rol temp;
             BLL.Rol_BLL gestor = new BLL.Rol_BLL();
 
-        private void Roles_Load(object sender, EventArgs e)
+        public void Roles_Load(object sender, EventArgs e)
         {
             Listar();
         }
-        public void Agregar_Proveedor()
+      
+    
+        
+        void Listar()
         {
-                temp = new BE.Rol();
-                temp._IDRol = int.Parse(txtID.Text);
-                temp._Nombre = txtUsuario.Text;
-                try
-                {
-                    gestor.Agregar(temp);
-                    MessageBox.Show("Agregado Correctamente...");
-                    Listar();
-                    txtID.Text = txtUsuario.Text = "";
-                }
-                catch (Exception Ex)
-                {
-                    MessageBox.Show(Ex.Message);
-                }
-            }
-        private void Agregar_Click(object sender, EventArgs e)
-        {
-            Agregar_Proveedor();
+            dataRol.DataSource = null;
+            dataRol.DataSource = gestor.Listar();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Agregar_Click_1(object sender, EventArgs e)
+        {
+            temp = new BE.Rol();
+            temp._IDRol = int.Parse(txtID.Text);
+            temp._Nombre = txtUsuario.Text;
+            try
+            {
+                gestor.Agregar(temp);
+                MessageBox.Show("Agregado Correctamente...");
+                Listar();
+                txtID.Text = txtUsuario.Text = "";
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
             temp = new BE.Rol();
             temp._IDRol = int.Parse(txtID.Text);
@@ -63,7 +68,7 @@ namespace Trabajo_Practico.Rol
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             temp = new BE.Rol();
             temp._IDRol = int.Parse(txtID.Text);
@@ -77,11 +82,6 @@ namespace Trabajo_Practico.Rol
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-        void Listar()
-        {
-            dataRol.DataSource = null;
-            dataRol.DataSource = gestor.Listar();
         }
     }
 }

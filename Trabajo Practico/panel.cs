@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using Trabajo_Practico.Rol;
 
 namespace Trabajo_Practico
 {
@@ -73,7 +74,7 @@ namespace Trabajo_Practico
 
         private void BtnProveedores_Click(object sender, EventArgs e)
         {
-            Proveedores proveedores = new Proveedores();
+            Proveedor proveedores = new Proveedor();
             proveedores.Show();
         }
 
@@ -81,6 +82,13 @@ namespace Trabajo_Practico
         {
             Crear_Usuarios usuarios = new Crear_Usuarios();
             usuarios.Show();
+            
+        }
+
+        private void btnRoles_Click(object sender, EventArgs e)
+        {
+            Roles roles = new Roles();
+            roles.Show();
         }
     }
 }

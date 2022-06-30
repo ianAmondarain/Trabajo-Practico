@@ -40,7 +40,37 @@ namespace Trabajo_Practico
             }
 
         }
-        private void btnAgregar_Click(object sender, EventArgs e)
+  
+        void Listar()
+        {
+            DataProductos.DataSource = null;
+            DataProductos.DataSource = gestor.Listar();
+        }
+   
+        private void Productos_Load(object sender, EventArgs e)
+        {
+            Listar();
+
+        }
+
+   
+        void limpiartxt()
+        {
+            txtID.Clear();
+            txtDescripcion.Clear();
+            txtPrecioCompra.Clear();
+            txtStock.Clear();
+            txtVenta.Clear();
+        }
+
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
 
             try
@@ -53,14 +83,9 @@ namespace Trabajo_Practico
             {
                 MessageBox.Show(Ex.Message);
             }
-          
         }
-        void Listar()
-        {
-            DataProductos.DataSource = null;
-            DataProductos.DataSource = gestor.Listar();
-        }
-        private void Modificar_Click(object sender, EventArgs e)
+
+        private void Modificar_Click_1(object sender, EventArgs e)
         {
             Prod = new BE.Producto();
             Prod._ID = int.Parse(txtID.Text);
@@ -82,13 +107,7 @@ namespace Trabajo_Practico
             limpiartxt();
         }
 
-        private void Productos_Load(object sender, EventArgs e)
-        {
-            Listar();
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             Prod = new BE.Producto();
             Prod._ID = int.Parse(txtID.Text);
@@ -102,37 +121,9 @@ namespace Trabajo_Practico
             {
                 MessageBox.Show(ex.ToString());
             }
-
-        }
-        void limpiartxt()
-        {
-            txtID.Clear();
-            txtDescripcion.Clear();
-            txtPrecioCompra.Clear();
-            txtStock.Clear();
-            txtVenta.Clear();
         }
 
-        private void DataProductos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-            try
-            {
-                Prod = (BE.Producto)DataProductos.Rows[e.RowIndex].DataBoundItem;
-                txtID.Text = Prod._ID.ToString();
-                txtDescripcion.Text = Prod._Descripcion;
-                txtStock.Text = Prod._Stock.ToString();
-                txtPrecioCompra.Text = Prod._Precio_Compra.ToString();
-                txtVenta.Text = Prod._Precio_Venta.ToString();
-            }
-            catch 
-            {
-                
-            }
-
-        }
-
-        private void DataProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void DataProductos_CellContentDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             DialogResult result;
             result = MessageBox.Show("Desea eliminar el producto ?", "Eliminando registros...", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -153,9 +144,21 @@ namespace Trabajo_Practico
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void DataProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.Hide();
+            try
+            {
+                Prod = (BE.Producto)DataProductos.Rows[e.RowIndex].DataBoundItem;
+                txtID.Text = Prod._ID.ToString();
+                txtDescripcion.Text = Prod._Descripcion;
+                txtStock.Text = Prod._Stock.ToString();
+                txtPrecioCompra.Text = Prod._Precio_Compra.ToString();
+                txtVenta.Text = Prod._Precio_Venta.ToString();
+            }
+            catch
+            {
+
+            }
         }
     }
 }

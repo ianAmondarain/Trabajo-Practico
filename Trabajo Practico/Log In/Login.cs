@@ -74,5 +74,13 @@ namespace Trabajo_Practico
                 }
             }
         }
+
+        private void button5_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                
+            }
+        }
     }
 }

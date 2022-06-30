@@ -74,53 +74,7 @@ namespace Trabajo_Practico
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Agregar_Usuario();
-                MessageBox.Show("usuario agregado");
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
-            }
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Usuario = new BE.Usuario();
-            Usuario._Idusuario = int.Parse(txtID.Text);
-            Usuario.usuario = txtUsuario.Text;
-            Usuario._Contraseña = DesEncriptar(txtContraseña.Text);
-            Usuario._IdRol = cmbRol.Text;
-            try
-            {
-                Gestor.Modificar(Usuario);
-                MessageBox.Show("Modificado correctamente");
-                VerDatos();
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
-            }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Usuario = new BE.Usuario();
-            Usuario._Idusuario = int.Parse(txtID.Text);
-            try
-            {
-                Gestor.Eliminar(Usuario);
-                MessageBox.Show("producto eliminado");
-                VerDatos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
 
         void VerDatos()
         {
@@ -140,7 +94,43 @@ namespace Trabajo_Practico
 
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Usuario = new BE.Usuario();
+            Usuario._Idusuario = int.Parse(txtID.Text);
+            Usuario.usuario = txtUsuario.Text;
+            Usuario._Contraseña = DesEncriptar(txtContraseña.Text);
+            Usuario._IdRol = cmbRol.Text;
+            try
+            {
+                Gestor.Modificar(Usuario);
+                MessageBox.Show("Modificado correctamente");
+                VerDatos();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Usuario = new BE.Usuario();
+            Usuario._Idusuario = int.Parse(txtID.Text);
+            try
+            {
+                Gestor.Eliminar(Usuario);
+                MessageBox.Show("producto eliminado");
+                VerDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -149,11 +139,24 @@ namespace Trabajo_Practico
                 txtUsuario.Text = Usuario.usuario;
                 txtContraseña.Text = DesEncriptar(Usuario._Contraseña);
                 cmbRol.Text = Usuario._IdRol;
-               
+
             }
-            catch 
+            catch
             {
-                
+
+            }
+        }
+
+        private void Agregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Agregar_Usuario();
+                MessageBox.Show("usuario agregado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }

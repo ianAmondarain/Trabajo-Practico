@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Trabajo_Practico
 {
-    public partial class Proveedores : Form
+    public partial class Proveedor : Form
     {
-        public Proveedores()
+        public Proveedor()
         {
             InitializeComponent();
         }
@@ -37,20 +37,7 @@ namespace Trabajo_Practico
                 MessageBox.Show(Ex.Message);
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-            try
-            {
-                Agregar_Proveedor();
-                MessageBox.Show("proveedor agregado");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-          
-        }
+     
         void limpiartxt()
         {
             txtID.Clear();
@@ -88,7 +75,26 @@ namespace Trabajo_Practico
         }
     
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Agregar_Proveedor();
+                MessageBox.Show("proveedor agregado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -101,11 +107,6 @@ namespace Trabajo_Practico
             {
 
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
         }
     }
 }

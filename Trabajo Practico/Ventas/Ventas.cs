@@ -52,8 +52,8 @@ namespace Trabajo_Practico
         }
         void listar()
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = gestor.Listar();
+            datagridVentas.DataSource = null;
+            datagridVentas.DataSource = gestor.Listar();
         }
         void limpiartxt()
         {
@@ -85,42 +85,7 @@ namespace Trabajo_Practico
             }
 
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
 
-            try
-            {
-                Agregar_Venta();
-                MessageBox.Show("Venta Agregada");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            temp = new BE.Ventas();
-            temp._IDVentas = 0;
-            temp._IDClientes = int.Parse(cmbIDClientes.Text);
-            temp._Descripcion = cmbProducto.Text;
-            temp._Cantidad = int.Parse(txtCantidad.Text);
-            temp._PrecioUnitario = int.Parse(txtPrecioCompra.Text);
-            temp._PrecioVenta = int.Parse(txtVentas.Text);
-            try
-            {
-                gestor.Modificar(temp);
-                MessageBox.Show("Venta Modificada");
-                listar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-           
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -143,7 +108,7 @@ namespace Trabajo_Practico
         {
             try
             {
-                temp = (BE.Ventas)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                temp = (BE.Ventas)datagridVentas.Rows[e.RowIndex].DataBoundItem;
                 txtVentas.Text = temp._IDVentas.ToString();
                 cmbIDClientes.Text = temp._IDClientes.ToString();
                 cmbProducto.Text = temp._Descripcion;
@@ -175,13 +140,13 @@ namespace Trabajo_Practico
             {
                 List<BE.Ventas> Venta = gestor.Listar();
                 List<BE.Ventas> venta = gestor.ListarID(int.Parse(cmbTotalVentas.Text));
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = gestor.ListarID(Venta[0]._IDClientes);
+                datagridVentas.DataSource = null;
+                datagridVentas.DataSource = gestor.ListarID(Venta[0]._IDClientes);
                 txtVentas.Text = Venta[cmbTotalVentas.SelectedIndex]._IDClientes + "" + Venta[0]._IDClientes;
                 for (int i = 0; i < venta.Count; i++)
                 {
-                    dataGridView1.DataSource = null;
-                    dataGridView1.DataSource = gestor.ListarID(Venta[i]._IDClientes);
+                    datagridVentas.DataSource = null;
+                    datagridVentas.DataSource = gestor.ListarID(Venta[i]._IDClientes);
                 }
             }
             catch (Exception ex)
@@ -193,6 +158,41 @@ namespace Trabajo_Practico
         private void button4_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Agregar_Venta();
+                MessageBox.Show("Venta Agregada");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            temp = new BE.Ventas();
+            temp._IDVentas = 0;
+            temp._IDClientes = int.Parse(cmbIDClientes.Text);
+            temp._Descripcion = cmbProducto.Text;
+            temp._Cantidad = int.Parse(txtCantidad.Text);
+            temp._PrecioUnitario = int.Parse(txtPrecioCompra.Text);
+            temp._PrecioVenta = int.Parse(txtVentas.Text);
+            try
+            {
+                gestor.Modificar(temp);
+                MessageBox.Show("Venta Modificada");
+                listar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
